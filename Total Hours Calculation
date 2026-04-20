@@ -1,0 +1,27 @@
+def solve_hours_calculation():
+    try:
+
+        T = int(input("Enter Value of T: "))
+        H_total = int(input("Enter Value of H_total: "))
+
+        if not (H_total >= 24 and H_total % 2 == 0 and T < H_total):
+            print("INVALID INPUT")
+            return
+
+        numerator = H_total - (18 * T)
+
+        if numerator % 6 == 0:
+            D = numerator // 6
+            H = T - D
+
+
+            if D >= 0 and H >= 0:
+                print(f"D = {D}, H = {H}")
+            else:
+                print("INVALID INPUT")
+        else:
+
+            print("INVALID INPUT")
+    except ValueError:
+        print("INVALID INPUT")
+solve_hours_calculation()

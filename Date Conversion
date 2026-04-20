@@ -1,0 +1,23 @@
+def solve_logistics_problem():
+    try:
+        T = int(input("Enter Value of T: "))
+        D_total = int(input("Enter Value of D_total: "))
+        if not (D_total >= 7 and T < D_total):
+            print("INVALID INPUT")
+            return
+        numerator = (2 * D_total) - (5 * T)
+
+        if numerator % 9 == 0:
+            W = numerator // 9
+            D = T - W
+
+            if W >= 0 and D >= 0:
+                print(f"W = {W}, D = {D}")
+            else:
+                print("INVALID INPUT")
+        else:
+            print("INVALID INPUT")
+
+    except ValueError:
+        print("INVALID INPUT")
+solve_logistics_problem()

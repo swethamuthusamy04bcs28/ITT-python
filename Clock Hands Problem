@@ -1,0 +1,22 @@
+def solve_clock_problem():
+    try:
+        T = int(input("Enter T: "))
+        M_total = int(input("Enter M_total: "))
+
+        if not (M_total >= 60 and M_total % 10 == 0 and T < M_total):
+            print("INVALID INPUT")
+            return
+        numerator = (3 * M_total) - (10 * T)
+        if numerator % 170 == 0:
+            H = numerator // 170
+            M = T - H
+
+            if H >= 0 and M >= 0:
+                print(f"H = {H}, M = {M}")
+            else:
+                print("INVALID INPUT")
+        else:
+            print("INVALID INPUT")
+    except ValueError:
+        print("INVALID INPUT")
+solve_clock_problem()
